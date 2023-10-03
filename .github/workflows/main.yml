@@ -8,10 +8,19 @@ on:
       - main
 
 jobs:
-  my-job:
+  my-job0:
     runs-on: ubuntu-latest
 
     steps:
     - name: Print hello message
-    run : echo "Hello World"
+      run : echo "Hello World from job0" 
+
+  my-job1:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print hello message
+      run : echo "Hello World from job1"
+  
+          
     
