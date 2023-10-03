@@ -21,6 +21,13 @@ jobs:
       run: |
         echo "Application name is:"
         echo "${{env.APPLICATION_NAME}}"
+        
+    - name: list current folder
+      run: ls -la
+
+    - name: Git clone my repo
+      uses: actions/checkout@v1
+
     - name: list current folder
       run: ls -la
 
@@ -34,6 +41,11 @@ jobs:
       run : echo "Hello World from job1"
     - name: Print pckg name
       run: echo "Deploy package name is ${{ env.PACKAGE_NAME }}"
+    - name: test aws
+      run: aws --version
+    - name: test aws
+      run: zip
+      
         
       
   
