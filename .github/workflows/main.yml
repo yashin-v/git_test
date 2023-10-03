@@ -35,6 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [my-job0]
     
+    
 
     steps:
     - name: Print hello message
@@ -44,7 +45,7 @@ jobs:
     - name: test aws
       run: aws --version
     - name: test aws
-      run: zip
+      run: zip --version
       
         
       
