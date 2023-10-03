@@ -1,6 +1,9 @@
 
 
 name: CI
+env:
+  APPLICATION_NAME: "MyApp"
+  PACKAGE_NAME    : "app-deploy-ver-${{ github.sha }}"
 
 on:
   push:
@@ -14,6 +17,10 @@ jobs:
     steps:
     - name: Print hello message
       run : echo "Hello World from job0" 
+    - name: Print App name
+      run: |
+        echo "Application name is:"
+        echo "${{env.APPLICATION_NAME}}"
 
   my-job1:
     runs-on: ubuntu-latest
@@ -23,6 +30,10 @@ jobs:
     steps:
     - name: Print hello message
       run : echo "Hello World from job1"
+    - name: Print pckg name
+      run: echo "Deploy package name is ${{ env.PACKAGE_NAME }}"
+        
+      
   
           
     
